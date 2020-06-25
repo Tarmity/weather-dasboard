@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: darkblue;
+    color: white;
+    font-size: large;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+
+}
+
+
+.aside {
+    background: lightgray;
+    float:left;
+    width: 300px;
+    height: 800px;
+    margin-right:100px;
+    margin-left:20px;
+  }
+
+.search {
+    margin-left: 10px;
+}
+button{
+    background-color: blue;
+    color:white
+}
+
+.main {
+    background-color:white;
+    float:left;
+    width: 900px;
+    height: 400px;
+    margin-bottom: 50px;
+    border: grey solid;
+}
+
+.selectedCity {
+    margin-left: 10px;
+}
+
+.container {
+    background-color:white;
+    float:left;
+    width: 900px;
+    height: 400px;
+    margin-bottom: 50px;
+}
+
+.container h2 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.card-body{
+    background-color: #3d6488;
+    color: white;
+}
