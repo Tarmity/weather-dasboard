@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
 </head>
 <body>
     <header class= "header">
@@ -18,10 +18,11 @@
         <div class="search">
           <h2>Search for city:</h2>
           <form>
-          <input><button><i class="fa fa-search"></i></button>
+          <input id ="input-text" type= "text" placeholder="Enter City"><button id="submit" class="search-btn"><i class="fa fa-search"></i></button>
           </form>
           <br>
           <h3>Previous Searches:</h3>
+          <ul id="list" class="list-group"></ul>
         </div>
       </aside>
 
