@@ -156,7 +156,7 @@ const input = document.getElementById("input-text");
 let previous = document.getElementById("previous-list");
 const clear = document.getElementById("clear-history");
 let searchHistory = [];
-console.log(searchHistory);
+//console.log(searchHistory);
 
 searchInput.addEventListener("click",function() {
   event.preventDefault
@@ -193,69 +193,3 @@ renderSearchHistory();
 if (searchHistory.length > 0) {
   getWeather(searchHistory[searchHistory.length - 1]);
 }
-
-//  let searchInput = document.querySelector('#input-text');
-//  let searchForm = document.querySelector('#search-form');
-//  let previousList = document.querySelector('#previous-list');
-//  let cityArray = [];
-
-//  init();
-
-//  function renderCities(){
-//    previousList.innerHTML = "";
-
-//   for (let i = 0; 0 <cityArray.length; i++){
-//     let cityA = cityArray[i];
-
-//     let li = document.createElement("li");
-//     li.textContent = cityA;
-//     li.setAttribute("data-index", i);
-
-//     previousList.appendChild(li);
-//   }
-//  }
-
-// function init (){
-//   let storedCity = JSON.parse(localStorage.getItem("city"))
-
-//   if (storedCity !== null){
-//     cityA = storedCity;
-//   }
-
-//   renderCities();
-// }
-
-//  function storeCity(){
-//   let city = document.getElementById("input-text").value; 
-//   localStorage.setItem("city", city);
-//  };
-
-//  searchForm.addEventListener("submit", function(event){
-//    event.preventDefault();
-
-//    let searchText = searchInput.value.trim();
-
-//    if(searchText === ""){
-//      return;
-//    }
-
-//    cityA.push(searchText);
-//    searchInput.value ="";
-
-//    storeCity();
-//    renderCities();
-//  });
-
-//  previousList.addEventListener("click,", function(event){
-//    let element = event.target;
-   
-//    if (element.matches("button") === true) {
-//      let index = element.parentElement.getAttribute("data-index");
-//      cityA.splice(index, 1);
-
-//      storeCity();
-//      renderCities();
-//    }
-//  });
-
- 
