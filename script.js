@@ -7,6 +7,7 @@
 let button = document.querySelector('.search-btn');
 let userInput = document.querySelector('.input-text');
 let currentCity = document.querySelector('.currentCity');
+//let currentPic = document.querySelector('#current-pic')
 let currentTemperature = document.querySelector('.currentTemperature');
 let currentHumidity = document.querySelector('.currentHumidity');
 let currentWindSpeed = document.querySelector('.currentWindSpeed');
@@ -45,7 +46,11 @@ fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInp
   const formatedDate = (day + '/'+ month + '/' + year);
   console.log(formatedDate);
 
-  currentCity.innerText = data.name + " " + formatedDate;
+  let weatherPic =  data.weather[0].icon;
+  let weatherUrl =  "http://openweathermap.org/img/wn/" + weatherPic + "@2x.png"
+  let currentPic = $('#current-pic').attr('src', weatherUrl);
+
+  currentCity.innerText = data.name + " " + "("+formatedDate+")";
   currentTemperature.innerText = "Temperature:   " + data.main.temp;
   currentHumidity.innerText = "Humidity:   " + data.main.humidity;
   currentWindSpeed. innerText = "Wind Speed:   " + data.wind.speed;
