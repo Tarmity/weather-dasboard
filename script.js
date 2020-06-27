@@ -32,6 +32,7 @@ let iconFive = document.querySelector('.iconFive');
 let tempFive = document.querySelector('.tempFive');
 let humidityFive = document.querySelector('.humidityFive');
 
+function getWeather(){
 button.addEventListener('click',function(event){
 event.preventDefault()
 fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInput.value + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
@@ -69,6 +70,7 @@ function uvIndex(lat, lon ){
   return fetch("http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon="+ lon + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
   .then(response => response.json())
   
+ }
 }
 
 
@@ -148,70 +150,112 @@ button.addEventListener('click',function(event){
 
   })
 
- /////Get search city and load it to Previous seach list
+ /////Get search city and load it to Previous seach list  
+const searchInput = document.getElementById("submit");
+const input = document.getElementById("input-text");
+let previous = document.getElementById("previous-list");
+const clear = document.getElementById("clear-history");
+let searchHistory = [];
+console.log(searchHistory);
 
- let searchInput = document.querySelector('#input-text');
- let searchForm = document.querySelector('#search-form');
- let previousList = document.querySelector('#previous-list');
- let cityArray = [];
+searchInput.addEventListener("click",function() {
+  event.preventDefault
+  const searchTerm = input.value;
+  getWeather(searchTerm);
+  searchHistory.push(searchTerm);
+  localStorage.setItem("search",JSON.stringify(searchHistory));
+  renderSearchHistory();
+})
 
- init();
+ clear.addEventListener("click",function() {
+  event.preventDefault;
+  searchHistory = [];
+   renderSearchHistory();
+ })
 
- function renderCities(){
-   previousList.innerHTML = "";
 
-  for (let i = 0; 0 <cityArray.length; i++){
-    let cityA = cityArray[i];
-
-    let li = document.createElement("li");
-    li.textContent = cityA;
-    li.setAttribute("data-index", i);
-
-    previousList.appendChild(li);
+function renderSearchHistory() {
+  previous.innerHTML = "";
+  for (let i=0; i<searchHistory.length; i++) {
+      const historyItem = document.createElement("input");
+      historyItem.setAttribute("type","button");
+      historyItem.setAttribute("readonly",true);
+      historyItem.setAttribute("class", "form-control d-block sml-white");
+      historyItem.setAttribute("value", searchHistory[i]);
+      historyItem.addEventListener("click",function() {
+          getWeather(historyItem);
+      })
+      previous.append(historyItem);
   }
- }
-
-function init (){
-  let storedCity = JSON.parse(localStorage.getItem("aside"))
-
-  if (storedCity !== null){
-    cityA = storedCity;
-  }
-
-  renderCities();
 }
 
- function storeCity(){
-  let city = document.getElementById("input-text").value; 
-  localStorage.setItem("city", city);
- };
+renderSearchHistory();
+if (searchHistory.length > 0) {
+  getWeather(searchHistory[searchHistory.length - 1]);
+}
 
- searchForm.addEventListener("submit", function(event){
-   event.preventDefault();
+//  let searchInput = document.querySelector('#input-text');
+//  let searchForm = document.querySelector('#search-form');
+//  let previousList = document.querySelector('#previous-list');
+//  let cityArray = [];
 
-   let searchText = searchInput.value.trim();
+//  init();
 
-   if(searchText === ""){
-     return;
-   }
+//  function renderCities(){
+//    previousList.innerHTML = "";
 
-   cityA.push(searchText);
-   searchInput.value ="";
+//   for (let i = 0; 0 <cityArray.length; i++){
+//     let cityA = cityArray[i];
 
-   storeCity();
-   renderCities();
- });
+//     let li = document.createElement("li");
+//     li.textContent = cityA;
+//     li.setAttribute("data-index", i);
 
- previousList.addEventListener("click,", function(event){
-   let element = event.target;
+//     previousList.appendChild(li);
+//   }
+//  }
+
+// function init (){
+//   let storedCity = JSON.parse(localStorage.getItem("city"))
+
+//   if (storedCity !== null){
+//     cityA = storedCity;
+//   }
+
+//   renderCities();
+// }
+
+//  function storeCity(){
+//   let city = document.getElementById("input-text").value; 
+//   localStorage.setItem("city", city);
+//  };
+
+//  searchForm.addEventListener("submit", function(event){
+//    event.preventDefault();
+
+//    let searchText = searchInput.value.trim();
+
+//    if(searchText === ""){
+//      return;
+//    }
+
+//    cityA.push(searchText);
+//    searchInput.value ="";
+
+//    storeCity();
+//    renderCities();
+//  });
+
+//  previousList.addEventListener("click,", function(event){
+//    let element = event.target;
    
-   if (element.matches("button") === true) {
-     let index = element.parentElement.getAttribute("data-index");
-     cityA.splice(index, 1);
+//    if (element.matches("button") === true) {
+//      let index = element.parentElement.getAttribute("data-index");
+//      cityA.splice(index, 1);
 
-     storeCity();
-     renderCities();
-   }
- });
+//      storeCity();
+//      renderCities();
+//    }
+//  });
 
  
