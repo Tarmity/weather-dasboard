@@ -38,16 +38,23 @@ fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInp
 .then(response => response.json())
 .then(data => {
   console.log(data)
-  currentCity.innerText = data.name;
-  currentTemperature.innerText = data.main.temp;
-  currentHumidity.innerText = data.main.humidity;
-  currentWindSpeed. innerText = data.wind.speed;
+  const currentDate = new Date (data.dt * 1000);
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth() + 1;
+  const year = currentDate.getFullYear();
+  const formatedDate = (day + '/'+ month + '/' + year);
+  console.log(formatedDate);
+
+  currentCity.innerText = data.name + " " + formatedDate;
+  currentTemperature.innerText = "Temperature:   " + data.main.temp;
+  currentHumidity.innerText = "Humidity:   " + data.main.humidity;
+  currentWindSpeed. innerText = "Wind Speed:   " + data.wind.speed;
  
   uvIndex(data.coord.lat, data.coord.lon)
     .then((uvData)=> {
-     currentUvIndex.innerText = uvData.value;
+     currentUvIndex.innerText = "UV Index:   " + uvData.value;
     })
-
+  
 })
 .catch(err => (console.log(err)))
 

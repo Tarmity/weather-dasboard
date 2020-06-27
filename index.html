@@ -14,7 +14,7 @@
        <h1>Weather Dashboard</h1>
     </header>
     
-      <aside class="aside">
+    <aside class="aside">
         <form class="search" id="search-form">
           <label for="search-text">Search for city:</label>
           <input id ="input-text" class="input-text" type= "text" placeholder="Enter City"><button id="submit" value = "submit" class="search-btn"><i class="fa fa-search"></i></button>
@@ -23,17 +23,31 @@
           <h3>Previous Searches:</h3>
           <ul id="previous-list" class="listGroup">
           </ul>
-      </aside>
+    </aside>
 
-      <main class="main">
+    <main class="main">
        <div class="selectedCity">
-          <h1 class="currentCity"></h1>
-          <p>Temperature:<h4 class="currentTemperature"></h4></p>
+         <div>
+            <h1 class="currentCity"></h1>
+            <img id = "current-pic" scr="" alt="">
+         </div>
+         <div>
+            <h1 class="currentCity"></h1>
+         </div>
+         <div>
+          <h4 class="currentTemperature"></h4>
+         </div>
+         <div>
           <h4 class="currentHumidity"></h4>
+         </div>
+         <div>
           <h4 class="currentWindSpeed"></h4>
+         </div>
+         <div>
           <h4 class="currentuvIndex"></h4>
-       </div>
-      </main>
+         </div>
+      </div>
+    </main>
 
       <div class="container">
         <div class="fiveDayForecast">
