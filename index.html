@@ -15,21 +15,20 @@
     </header>
     
       <aside class="aside">
-        <div class="search">
-          <h2>Search for city:</h2>
-          <form>
+        <form class="search" id="search-form">
+          <label for="search-text">Search for city:</label>
           <input id ="input-text" class="input-text" type= "text" placeholder="Enter City"><button id="submit" value = "submit" class="search-btn"><i class="fa fa-search"></i></button>
           </form>
           <br>
           <h3>Previous Searches:</h3>
-          <ul id="list" class="list-group"></ul>
-        </div>
+          <ul id="previous-list" class="listGroup">
+          </ul>
       </aside>
 
       <main class="main">
        <div class="selectedCity">
           <h1 class="currentCity"></h1>
-          <h4 class="currentTemperature"></h4>
+          <p>Temperature:<h4 class="currentTemperature"></h4></p>
           <h4 class="currentHumidity"></h4>
           <h4 class="currentWindSpeed"></h4>
           <h4 class="currentuvIndex"></h4>
@@ -44,31 +43,31 @@
           
           <div id="day1" class="card-body mx-2 my-2">
               <h5 class="dateOne">Date</h5>
-              <img class="iconOne" src="">
+              <div id="icon"><img id="wiconOne" src="" alt="Weather icon"></div>
               <p class="tempOne">Temp</p>
               <p class="humidityOne">Humidity</p>
           </div>
           <div id="day2" class="card-body mx-2 my-2">
                   <h5 class="dateTwo">Date</h5>
-                  <img class="iconTwo" src="">
+                  <div id="icon"><img id="wiconTwo" src="" alt="Weather icon"></div>
                   <p class="tempTwo">Temp</p>
                   <p class="humidityTwo">Humidity</p>
           </div>
           <div id="day3" class="card-body mx-2 my-2"> 
                   <h5 class="dateThree">Date</h5>
-                  <img class="iconThree" src="">
+                  <div id="icon"><img id="wiconThree" src="" alt="Weather icon"></div>
                   <p class="tempThree">Temp</p>
                   <p class="humidityThree">Humidity</p>
           </div>
           <div id="day4" class="card-body mx-2 my-2">
                   <h5 class="dateFour">Date</h5>
-                  <img class="iconFour" src="">
+                  <div id="icon"><img id="wiconFour" src="" alt="Weather icon"></div>
                   <p class="tempFour">Temp</p>
                   <p class="humidityFour">Humidity</p> 
           </div>
           <div id="day5" class="card-body mx-2 my-2">
                   <h5 class="dateFive">Date</h5>
-                  <img class="iconFive" src="">
+                  <div id="icon"><img id="wiconFive" src="" alt="Weather icon"></div>
                   <p class="tempFive">Temp</p>
                   <p class="humidityFive">Humidity</p>
           </div>
