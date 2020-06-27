@@ -7,7 +7,6 @@
 let button = document.querySelector('.search-btn');
 let userInput = document.querySelector('.input-text');
 let currentCity = document.querySelector('.currentCity');
-//let currentPic = document.querySelector('#current-pic')
 let currentTemperature = document.querySelector('.currentTemperature');
 let currentHumidity = document.querySelector('.currentHumidity');
 let currentWindSpeed = document.querySelector('.currentWindSpeed');
@@ -44,7 +43,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInp
   const month = currentDate.getMonth() + 1;
   const year = currentDate.getFullYear();
   const formatedDate = (day + '/'+ month + '/' + year);
-  console.log(formatedDate);
+  //console.log(formatedDate);
 
   let weatherPic =  data.weather[0].icon;
   let weatherUrl =  "http://openweathermap.org/img/wn/" + weatherPic + "@2x.png"
@@ -79,40 +78,71 @@ button.addEventListener('click',function(event){
   .then(response => response.json())
   .then(forecast => {
     console.log(forecast)
-    dateOne.innerText = forecast.list[0].dt_text;
-    let iconcodeOne = forecast.list[0].weather[0].icon;
+
+    const forecastDateOne = new Date (forecast.list[7].dt*1000);
+    const forecastDayOne = forecastDateOne.getDate();
+    const forecastMonthOne = forecastDateOne.getMonth();
+    const forecastYearOne = forecastDateOne.getFullYear();
+    const formatedDateOne = (forecastDayOne + '/'+ forecastMonthOne + '/' + forecastYearOne);
+    
+    dateOne.innerText = formatedDateOne;
+    let iconcodeOne = forecast.list[7].weather[0].icon;
     let iconurlOne = "http://openweathermap.org/img/wn/" + iconcodeOne + "@2x.png";
     $('#wiconOne').attr('src', iconurlOne);
-    tempOne.innerText = forecast.list[0].main.temp;
-    humidityOne.innerText = forecast.list[0].main.humidity;
+    tempOne.innerText = "Temp:   " + forecast.list[7].main.temp;
+    humidityOne.innerText = "Humidity:   " + forecast.list[7].main.humidity;
     
-    dateTwo.innerText = forecast.list[8].dt_text;
-    let iconcodeTwo = forecast.list[0].weather[0].icon;
+    const forecastDateTwo = new Date (forecast.list[15].dt*1000)
+    const forecastDayTwo = forecastDateTwo.getDate();
+    const forecastMonthTwo = forecastDateTwo.getMonth();
+    const forecastYearTwo = forecastDateTwo.getFullYear();
+    const formatedDateTwo = (forecastDayTwo + '/'+ forecastMonthTwo + '/' + forecastYearTwo);
+   
+    dateTwo.innerText = formatedDateTwo;
+    let iconcodeTwo = forecast.list[15].weather[0].icon;
     let iconurlTwo = "http://openweathermap.org/img/wn/" + iconcodeTwo + "@2x.png";
     $('#wiconTwo').attr('src', iconurlTwo);
-    tempTwo.innerText = forecast.list[8].main.temp;
-    humidityTwo.innerText = forecast.list[8].main.humidity;
+    tempTwo.innerText = "Temp:   " +  forecast.list[15].main.temp;
+    humidityTwo.innerText = "Humidity:   " + forecast.list[15].main.humidity;
 
-    dateThree.innerText = forecast.list[16].dt_text;
-    let iconcodeThree = forecast.list[0].weather[0].icon;
+    const forecastDateThree = new Date (forecast.list[23].dt*1000)
+    const forecastDayThree = forecastDateThree.getDate();
+    const forecastMonthThree = forecastDateThree.getMonth();
+    const forecastYearThree = forecastDateThree.getFullYear();
+    const formatedDateThree = (forecastDayThree + '/'+ forecastMonthThree + '/' + forecastYearThree);
+
+    dateThree.innerText = formatedDateThree;
+    let iconcodeThree = forecast.list[23].weather[0].icon;
     let iconurlThree = "http://openweathermap.org/img/wn/" + iconcodeThree + "@2x.png";
     $('#wiconThree').attr('src', iconurlThree);
-    tempThree.innerText = forecast.list[16].main.temp;
-    humidityThree.innerText = forecast.list[16].main.humidity;
+    tempThree.innerText = "Temp:   " + forecast.list[23].main.temp;
+    humidityThree.innerText = "Humidity:   " + forecast.list[23].main.humidity;
 
-    dateFour.innerText = forecast.list[24].dt_text;
-    let iconcodeFour = forecast.list[0].weather[0].icon;
+    const forecastDateFour = new Date (forecast.list[31].dt*1000)
+    const forecastDayFour = forecastDateFour.getDate();
+    const forecastMonthFour = forecastDateFour.getMonth();
+    const forecastYearFour = forecastDateFour.getFullYear();
+    const formatedDateFour = (forecastDayFour + '/'+ forecastMonthFour + '/' + forecastYearFour);
+    
+    dateFour.innerText = formatedDateFour;
+    let iconcodeFour = forecast.list[31].weather[0].icon;
     let iconurlFour = "http://openweathermap.org/img/wn/" + iconcodeFour + "@2x.png";
     $('#wiconFour').attr('src', iconurlFour);
-    tempFour.innerText = forecast.list[24].main.temp;
-    humidityFour.innerText = forecast.list[24].main.humidity;
+    tempFour.innerText = "Temp:   " + forecast.list[31].main.temp;
+    humidityFour.innerText = "Humidity:   " +forecast.list[31].main.humidity;
 
-    dateFive.innerText = forecast.list[32].dt_text;
-    let iconcodeFive = forecast.list[0].weather[0].icon;
+    const forecastDateFive = new Date (forecast.list[39].dt*1000)
+    const forecastDayFive = forecastDateFive.getDate();
+    const forecastMonthFive = forecastDateFive.getMonth();
+    const forecastYearFive = forecastDateFive.getFullYear();
+    const formatedDateFive = (forecastDayFive + '/'+ forecastMonthFive + '/' + forecastYearFive);
+  
+    dateFive.innerText = formatedDateFive;
+    let iconcodeFive = forecast.list[39].weather[0].icon;
     let iconurlFive = "http://openweathermap.org/img/wn/" + iconcodeFive + "@2x.png";
     $('#wiconFive').attr('src', iconurlFive);
-    tempFive.innerText = forecast.list[32].main.temp;
-    humidityFive.innerText = forecast.list[32].main.humidity;
+    tempFive.innerText = "Temp:   " + forecast.list[39].main.temp;
+    humidityFive.innerText = "Humidity:   " + forecast.list[39].main.humidity;
 
   })
 
