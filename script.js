@@ -1,9 +1,4 @@
-// get search input to save to local storage and become a list
-// use input to retive information from open weather
-// once information is retived display it in the current city container
-// retive the 5 day forecast 
-// display the 5 day for5cast in the 5 day forecast cards  
-//api key 
+
 let button = document.querySelector('.search-btn');
 let userInput = document.querySelector('.input-text');
 let currentCity = document.querySelector('.currentCity');
@@ -60,6 +55,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInp
   uvIndex(data.coord.lat, data.coord.lon)
     .then((uvData)=> {
      currentUvIndex.innerText = "UV Index:   " + uvData.value;
+     currentUvIndex.setAttribute("class", "badge badge-danger")
     })
   
 })
@@ -181,12 +177,12 @@ function renderSearchHistory() {
   for (let i=0; i<searchHistory.length; i++) {
       const historyItem = document.createElement("input");
       historyItem.setAttribute("type","button");
-      //historyItem.setAttribute("readonly",true);
+      historyItem.setAttribute("readonly",true);
       historyItem.setAttribute("class", "form-control d-block sml-white");
       historyItem.setAttribute("value", searchHistory[i]);
       historyItem.addEventListener("click",function(event) {
-        event.preventDefault;
-        getWeather(historyItem);
+        searchHistory = [];
+        getWeather(historyItem.value);
      })
      previous.append(historyItem);
   }
