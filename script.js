@@ -32,6 +32,8 @@ let iconFive = document.querySelector('.iconFive');
 let tempFive = document.querySelector('.tempFive');
 let humidityFive = document.querySelector('.humidityFive');
 
+getWeather();
+
 function getWeather(){
 button.addEventListener('click',function(event){
 event.preventDefault()
@@ -71,8 +73,8 @@ function uvIndex(lat, lon ){
   .then(response => response.json())
   
  }
-}
 
+}
 
 button.addEventListener('click',function(event){
   event.preventDefault()
@@ -83,7 +85,7 @@ button.addEventListener('click',function(event){
 
     const forecastDateOne = new Date (forecast.list[7].dt*1000);
     const forecastDayOne = forecastDateOne.getDate();
-    const forecastMonthOne = forecastDateOne.getMonth();
+    const forecastMonthOne = forecastDateOne.getMonth()+ 1;
     const forecastYearOne = forecastDateOne.getFullYear();
     const formatedDateOne = (forecastDayOne + '/'+ forecastMonthOne + '/' + forecastYearOne);
     
@@ -96,7 +98,7 @@ button.addEventListener('click',function(event){
     
     const forecastDateTwo = new Date (forecast.list[15].dt*1000)
     const forecastDayTwo = forecastDateTwo.getDate();
-    const forecastMonthTwo = forecastDateTwo.getMonth();
+    const forecastMonthTwo = forecastDateTwo.getMonth()+ 1;
     const forecastYearTwo = forecastDateTwo.getFullYear();
     const formatedDateTwo = (forecastDayTwo + '/'+ forecastMonthTwo + '/' + forecastYearTwo);
    
@@ -109,7 +111,7 @@ button.addEventListener('click',function(event){
 
     const forecastDateThree = new Date (forecast.list[23].dt*1000)
     const forecastDayThree = forecastDateThree.getDate();
-    const forecastMonthThree = forecastDateThree.getMonth();
+    const forecastMonthThree = forecastDateThree.getMonth()+ 1;
     const forecastYearThree = forecastDateThree.getFullYear();
     const formatedDateThree = (forecastDayThree + '/'+ forecastMonthThree + '/' + forecastYearThree);
 
@@ -122,7 +124,7 @@ button.addEventListener('click',function(event){
 
     const forecastDateFour = new Date (forecast.list[31].dt*1000)
     const forecastDayFour = forecastDateFour.getDate();
-    const forecastMonthFour = forecastDateFour.getMonth();
+    const forecastMonthFour = forecastDateFour.getMonth()+ 1;
     const forecastYearFour = forecastDateFour.getFullYear();
     const formatedDateFour = (forecastDayFour + '/'+ forecastMonthFour + '/' + forecastYearFour);
     
@@ -135,7 +137,7 @@ button.addEventListener('click',function(event){
 
     const forecastDateFive = new Date (forecast.list[39].dt*1000)
     const forecastDayFive = forecastDateFive.getDate();
-    const forecastMonthFive = forecastDateFive.getMonth();
+    const forecastMonthFive = forecastDateFive.getMonth()+ 1;
     const forecastYearFive = forecastDateFive.getFullYear();
     const formatedDateFive = (forecastDayFive + '/'+ forecastMonthFive + '/' + forecastYearFive);
   
@@ -179,13 +181,14 @@ function renderSearchHistory() {
   for (let i=0; i<searchHistory.length; i++) {
       const historyItem = document.createElement("input");
       historyItem.setAttribute("type","button");
-      historyItem.setAttribute("readonly",true);
+      //historyItem.setAttribute("readonly",true);
       historyItem.setAttribute("class", "form-control d-block sml-white");
       historyItem.setAttribute("value", searchHistory[i]);
-      historyItem.addEventListener("click",function() {
-          getWeather(historyItem);
-      })
-      previous.append(historyItem);
+      historyItem.addEventListener("click",function(event) {
+        event.preventDefault;
+        getWeather(historyItem);
+     })
+     previous.append(historyItem);
   }
 }
 
