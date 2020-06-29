@@ -1,4 +1,3 @@
-
 let button = document.querySelector('.search-btn');
 let userInput = document.querySelector('.input-text');
 let currentCity = document.querySelector('.currentCity');
@@ -29,6 +28,7 @@ let humidityFive = document.querySelector('.humidityFive');
 
 getWeather();
 
+//Function calling the openweather API and returing the current day weather forecast
 function getWeather(){
 button.addEventListener('click',function(event){
 event.preventDefault()
@@ -72,6 +72,7 @@ function uvIndex(lat, lon ){
 
 }
 
+//Function to calling the openweather forecast and returning the 5 day Forecast
 button.addEventListener('click',function(event){
   event.preventDefault()
   fetch("http://api.openweathermap.org/data/2.5/forecast?units=metric&q=" + userInput.value + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
@@ -181,10 +182,9 @@ function renderSearchHistory() {
       historyItem.setAttribute("class", "form-control d-block sml-white");
       historyItem.setAttribute("value", searchHistory[i]);
       historyItem.addEventListener("click",function(event) {
-        searchHistory = [];
-        getWeather(historyItem.value);
+         getWeather(historyItem.value);
      })
-     previous.append(historyItem);
+      previous.append(historyItem);
   }
 }
 
