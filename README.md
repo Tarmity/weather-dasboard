@@ -4,6 +4,7 @@
 
 This repository is where i developed the Weather Dashboard product. Not only do i work on code and issues here, I also publish my latested updates and functions. This source code is available to everyone under the Free Software Foundation, Inc. https//fsf.org/.
 
+![weather Dashboard](https://user-images.githubusercontent.com/38900138/85975579-d04fde80-ba1b-11ea-9060-b73503f788b7.png)
 
 ## Table of Contents (Optional)
 
