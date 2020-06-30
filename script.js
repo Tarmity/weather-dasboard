@@ -68,7 +68,7 @@ function uvIndex(lat, lon ){
   return fetch("http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon="+ lon + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
   .then(response => response.json())
   
- }
+ };
 
 }
 
@@ -145,9 +145,9 @@ button.addEventListener('click',function(event){
     tempFive.innerText = "Temp:   " + forecast.list[39].main.temp;
     humidityFive.innerText = "Humidity:   " + forecast.list[39].main.humidity;
 
-  })
+  });
 
-  })
+  });
 
  /////Get search city and load it to Previous seach list  
 const searchInput = document.getElementById("submit");
@@ -164,13 +164,13 @@ searchInput.addEventListener("click",function() {
   searchHistory.push(searchTerm);
   localStorage.setItem("search",JSON.stringify(searchHistory));
   renderSearchHistory();
-})
+});
 
  clear.addEventListener("click",function() {
   event.preventDefault;
   searchHistory = [];
    renderSearchHistory();
- })
+ });
 
 
 function renderSearchHistory() {
@@ -181,14 +181,15 @@ function renderSearchHistory() {
       historyItem.setAttribute("readonly",true);
       historyItem.setAttribute("class", "form-control d-block sml-white");
       historyItem.setAttribute("value", searchHistory[i]);
-      historyItem.addEventListener("click",function(event) {
-         getWeather(historyItem.value);
-     })
+      historyItem.addEventListener("click", function(event) {
+        event.preventDefault;
+        getWeather(historyItem.value);
+     });
       previous.append(historyItem);
-  }
-}
+  };
+};
 
 renderSearchHistory();
 if (searchHistory.length > 0) {
   getWeather(searchHistory[searchHistory.length - 1]);
-}
+};
