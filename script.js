@@ -65,7 +65,7 @@ fetch("https://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userIn
 
 //function to get the UV index 
 function uvIndex(lat, lon ){
-  return fetch("http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon="+ lon + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
+  return fetch("https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon="+ lon + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
   .then(response => response.json())
   
  };
@@ -75,7 +75,7 @@ function uvIndex(lat, lon ){
 //Function to calling the openweather forecast and returning the 5 day Forecast
 button.addEventListener('click',function(event){
   event.preventDefault()
-  fetch("http://api.openweathermap.org/data/2.5/forecast?units=metric&q=" + userInput.value + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
+  fetch("https://api.openweathermap.org/data/2.5/forecast?units=metric&q=" + userInput.value + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
   .then(response => response.json())
   .then(forecast => {
     console.log(forecast)
@@ -88,7 +88,7 @@ button.addEventListener('click',function(event){
     
     dateOne.innerText = formatedDateOne;
     let iconcodeOne = forecast.list[7].weather[0].icon;
-    let iconurlOne = "http://openweathermap.org/img/wn/" + iconcodeOne + "@2x.png";
+    let iconurlOne = "https://openweathermap.org/img/wn/" + iconcodeOne + "@2x.png";
     $('#wiconOne').attr('src', iconurlOne);
     tempOne.innerText = "Temp:   " + forecast.list[7].main.temp;
     humidityOne.innerText = "Humidity:   " + forecast.list[7].main.humidity;
@@ -101,7 +101,7 @@ button.addEventListener('click',function(event){
    
     dateTwo.innerText = formatedDateTwo;
     let iconcodeTwo = forecast.list[15].weather[0].icon;
-    let iconurlTwo = "http://openweathermap.org/img/wn/" + iconcodeTwo + "@2x.png";
+    let iconurlTwo = "https://openweathermap.org/img/wn/" + iconcodeTwo + "@2x.png";
     $('#wiconTwo').attr('src', iconurlTwo);
     tempTwo.innerText = "Temp:   " +  forecast.list[15].main.temp;
     humidityTwo.innerText = "Humidity:   " + forecast.list[15].main.humidity;
@@ -114,7 +114,7 @@ button.addEventListener('click',function(event){
 
     dateThree.innerText = formatedDateThree;
     let iconcodeThree = forecast.list[23].weather[0].icon;
-    let iconurlThree = "http://openweathermap.org/img/wn/" + iconcodeThree + "@2x.png";
+    let iconurlThree = "https://openweathermap.org/img/wn/" + iconcodeThree + "@2x.png";
     $('#wiconThree').attr('src', iconurlThree);
     tempThree.innerText = "Temp:   " + forecast.list[23].main.temp;
     humidityThree.innerText = "Humidity:   " + forecast.list[23].main.humidity;
@@ -127,7 +127,7 @@ button.addEventListener('click',function(event){
     
     dateFour.innerText = formatedDateFour;
     let iconcodeFour = forecast.list[31].weather[0].icon;
-    let iconurlFour = "http://openweathermap.org/img/wn/" + iconcodeFour + "@2x.png";
+    let iconurlFour = "https://openweathermap.org/img/wn/" + iconcodeFour + "@2x.png";
     $('#wiconFour').attr('src', iconurlFour);
     tempFour.innerText = "Temp:   " + forecast.list[31].main.temp;
     humidityFour.innerText = "Humidity:   " +forecast.list[31].main.humidity;
@@ -140,7 +140,7 @@ button.addEventListener('click',function(event){
   
     dateFive.innerText = formatedDateFive;
     let iconcodeFive = forecast.list[39].weather[0].icon;
-    let iconurlFive = "http://openweathermap.org/img/wn/" + iconcodeFive + "@2x.png";
+    let iconurlFive = "https://openweathermap.org/img/wn/" + iconcodeFive + "@2x.png";
     $('#wiconFive').attr('src', iconurlFive);
     tempFive.innerText = "Temp:   " + forecast.list[39].main.temp;
     humidityFive.innerText = "Humidity:   " + forecast.list[39].main.humidity;
