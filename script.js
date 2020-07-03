@@ -32,7 +32,7 @@ getWeather();
 function getWeather(){
 button.addEventListener('click',function(event){
 event.preventDefault()
-fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInput.value + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
+fetch("https://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInput.value + "&appid=c7d07d3b9c3e936369948ee0a3d8c67b")
 .then(response => response.json())
 .then(data => {
   console.log(data)
@@ -44,7 +44,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&q=" + userInp
   //console.log(formatedDate);
 
   let weatherPic =  data.weather[0].icon;
-  let weatherUrl =  "http://openweathermap.org/img/wn/" + weatherPic + "@2x.png"
+  let weatherUrl =  "https://openweathermap.org/img/wn/" + weatherPic + "@2x.png"
   let currentPic = $('#current-pic').attr('src', weatherUrl);
 
   currentCity.innerText = data.name + " " + "("+formatedDate+")";
