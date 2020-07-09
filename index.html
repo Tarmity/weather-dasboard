@@ -1,102 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Weather Dashboard</title>
-</head>
-<body>
-    <header class= "header">
-       <h1>Weather Dashboard</h1>
-    </header>
+
+  <head>
+
+      <!-- Required meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     
-    <aside class="aside">
-        <form class="search" id="search-form">
-          <label for="search-text">Search for city:</label>
-          <input id ="input-text" class="input-text" type= "text" placeholder="Enter City"><button id="submit" value = "submit" class="search-btn"><i class="fa fa-search"></i></button>
-          </form>
-          <br>
-          <h3>Previous Searches:</h3>
-
-          <div class = "city-section">
-
-          </div>
-          <!-- <form id="previous-list" class="listGroup">
-          </form> -->
-    </aside>
-
-    <main class="main">
-       <div class="selectedCity">
-         <div>
-            <h1 class="currentCity"></h1>
-            <img id = "current-pic" scr="" alt="">
-         </div>
-         <div>
-            <h1 id="currentCity"></h1>
-         </div>
-         <div>
-          <h4 class="currentTemperature"></h4>
-         </div>
-         <div>
-          <h4 class="currentHumidity"></h4>
-         </div>
-         <div>
-          <h4 class="currentWindSpeed"></h4>
-         </div>
-         <div>
-          <h4 class="currentuvIndex"></h4>
-         </div>
-      </div>
-    </main>
-
-      <div class="container">
-        <div class="fiveDayForecast">
-          <h2>5 Day Forecast</h2>
-        </div>
-        <div class="row justify-content-center">
-          
-          <div id="day1" class="card-body mx-2 my-2">
-              <h5 class="dateOne"></h5>
-              <img id="wiconOne" src="">
-              <p class="tempOne"></p>
-              <p class="humidityOne"></p>
-          </div>
-          <div id="day2" class="card-body mx-2 my-2">
-                  <h5 class="dateTwo"></h5>
-                  <div id="icon"><img id="wiconTwo" src=""></div>
-                  <p class="tempTwo"></p>
-                  <p class="humidityTwo"></p>
-          </div>
-          <div id="day3" class="card-body mx-2 my-2"> 
-                  <h5 class="dateThree"></h5>
-                  <div id="icon"><img id="wiconThree" src=""></div>
-                  <p class="tempThree"></p>
-                  <p class="humidityThree"></p>
-          </div>
-          <div id="day4" class="card-body mx-2 my-2">
-                  <h5 class="dateFour"></h5>
-                  <div id="icon"><img id="wiconFour" src=""></div>
-                  <p class="tempFour"></p>
-                  <p class="humidityFour"></p> 
-          </div>
-          <div id="day5" class="card-body mx-2 my-2">
-                  <h5 class="dateFive"></h5>
-                  <div id="icon"><img id="wiconFive" src="" alt=></div>
-                  <p class="tempFive"></p>
-                  <p class="humidityFive"></p>
-          </div>
-      </div>
-
-    
-
+      <!-- Bootstrap Java Script-->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="script.js"></script>
 
-    </body>
+      <!--style sheet created for contact form and page background colour-->
+      <link rel="stylesheet" href="style.css">
+    
+      <title>Tarmitys Portfolio</title>
+
+  </head>
+   <!-- BackGround image -->
+  <body class = "background">
+
+    <!--logo and button-->
+   
+    <div id="logo-container">
+      <img src="images/logo.png" alt= "logo" class = "logo">
+      <button type ="button" class= "btn" onclick="document.location='dashboard.html'"> 
+        Go to dashboard
+      </button> 
+  
+    </div>
+      
+  </body>
 </html>
