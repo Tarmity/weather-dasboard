@@ -1,4 +1,5 @@
-# weather-dasboard
+# Weather-dasboard
+![License](https://img.shields.io/github/license/tarmity/Team-Profile-Generator)
 
 ## Description 
 
