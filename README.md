@@ -1,4 +1,5 @@
-# weather-dasboard
+# Weather-dasboard
+![License](https://img.shields.io/github/license/tarmity/weather-dashboard)
 
 ## Description 
 
@@ -25,5 +26,5 @@ To operate the Weather Dashboard simply open the link (https://tarmity.github.io
 
 ## Credits
 
-Followed brief instructions to achieve the desired outcome.
+Followed brief instructions to achieve the desired outcome. Canva for the logo
 
